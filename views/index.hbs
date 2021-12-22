@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>UsersApi</title>
+    <h1><b><center>This is an Users API to fetch the data from mysql database</center></b><hrcolor=#00cc00 width=95%></h1>
+  </head>
+  
+  <body>
+    <table id = "users" border="1">				<!-- create an table object -->
+        <tr>				<!-- "tr" represents a row -->
+          
+          <th>ID</th>	<!-- use "th" to indicate header row -->
+          <th>Name</th>
+          <th>Email</th>
+        </tr> 
+        
+        {{#each users}}	
+        <tr>	<!-- once again use tr for another row -->
+          <td>{{id}}</td>	<!-- use "td" henceforth for normal rows -->
+          <td>{{name}} </td>
+          <td>{{email}}</td>
+        </tr>   
+        {{/each}}
+        
+    
+        
+    </table>
+    <form action="http://localhost:3000/users" method="GET">
+      <input type="submit" id="btn"value="Update">
+    </form>
+
+    <form action="http://localhost:3000/users" method="POST">
+      
+      <input type="text" name="name" placeholder="Enter name">
+      <input type="text" name="email" placeholder="Enter email">
+      <input type="text" name="password" placeholder="Enter password">
+      <button type="Submit">Add User</button> 
+    </form>
+    <script src="script.js"></script>
+
+    
+    
+  </body>
+</html>
